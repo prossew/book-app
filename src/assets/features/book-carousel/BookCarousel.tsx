@@ -1,26 +1,7 @@
 import { BookCard } from "./BookCard";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useRef } from "react";
-
-type Book = {
-  title: string;
-  cover: string;
-};
-
-const books: Book[] = [
-  { title: "Норвежский лес", cover: "/books/1.webp" },
-  { title: "Кафка на пляже", cover: "/books/2.webp" },
-  { title: "1Q84", cover: "/books/3.jpg" },
-  { title: "Послемрак", cover: "/books/4.webp" },
-  { title: "Мужчины без женщин", cover: "/books/5.webp" },
-  { title: "Охота на овец", cover: "/books/6.webp" },
-  { title: "К югу от границы, на запад от солнца. Х.", cover: "/books/7.webp" },
-  {
-    title: "О чем я говорю, когда говорю о беге",
-    cover: "/books/8.webp",
-  },
-  { title: "Анна Каренина", cover: "/books/9.jpg" },
-];
+import { books } from "@/assets/shared/data/books";
 
 export function BookCarousel() {
   const carouselRef = useRef<HTMLDivElement | null>(null);
