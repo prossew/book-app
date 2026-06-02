@@ -1,6 +1,6 @@
 import { Book, Layers, Search, DoorOpen } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
-import { ThemeToggle } from "@/assets/shared/ui/ThemeToggle";
+import { ThemeToggle } from "@/shared/ui/ThemeToggle";
 
 export function Header() {
   const [open, setOpen] = useState(false);

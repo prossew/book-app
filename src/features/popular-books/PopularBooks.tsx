@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Dropdown } from "@/assets/shared/ui/Dropdown";
+import { Dropdown } from "@/shared/ui/Dropdown";
 import { ArrowRight } from "lucide-react";
-import { books } from "@/assets/shared/data/books";
+import { books } from "@/entities/book/books";
 
 export function PopularBooks() {
   const [period, setPeriod] = useState("day");

@@ -1,7 +1,7 @@
 import { BookCard } from "./BookCard";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useRef } from "react";
-import { books } from "@/assets/shared/data/books";
+import { books } from "@/entities/book/books";
 
 export function BookCarousel() {
   const carouselRef = useRef<HTMLDivElement | null>(null);

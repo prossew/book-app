@@ -1,15 +1,7 @@
-import { Header } from "./assets/widgets/Header";
-import { Hero } from "./assets/widgets/Hero";
-import { PopularBooks } from "./assets/features/popular-books/PopularBooks";
+import { HomePage } from "@/pages/HomePage";
 
 function App() {
-  return (
-    <>
-      <Header />
-      <Hero />
-      <PopularBooks />
-    </>
-  );
+  return <HomePage />;
 }
 
 export default App;
