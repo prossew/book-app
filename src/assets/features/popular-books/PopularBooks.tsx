@@ -15,10 +15,10 @@ export function PopularBooks() {
   const currentLabel = options.find((o) => o.value === period)?.label ?? "День";
 
   return (
-    <section className="max-w-[1170px] mx-auto mt-8 bg-[#f5f5f5] rounded-lg px-6 py-8 shadow-sm">
+    <section className="max-w-[1170px] mx-auto mt-8 bg-[#f5f5f5] rounded-lg px-6 py-8 shadow-sm dark:bg-zinc-900 dark:text-[rgb(198,198,200)]">
       <div className="flex items-center justify-between w-full">
         <div className="flex items-center">
-          <h2 className="text-2xl font-semibold leading-none">
+          <h2 className="text-2xl font-semibold leading-none text-zinc-900 dark:text-[rgb(198,198,200)]">
             Сейчас читают{" "}
           </h2>{" "}
           <ArrowRight size={18} className="ml-2" />
@@ -33,15 +33,15 @@ export function PopularBooks() {
         {books.map((book) => (
           <div
             key={book.id}
-            className="flex items-center gap-3 p-2 rounded-lg hover:bg-black/5 transition cursor-pointer"
+            className="flex items-center gap-3 p-2 rounded-lg hover:bg-black/5 transition cursor-pointer  "
           >
             <img
               src={book.cover}
-              className="w-[72px] h-[72px] rounded-md object-cover shadow-sm"
+              className="w-[72px] h-[72px] rounded-md object-cover shadow-sm "
             />
 
             <div className="min-w-0 flex-1">
-              <p className="text-sm font-medium text-gray-800 truncate">
+              <p className="text-sm font-medium text-gray-800 truncate  dark:text-[rgb(198,198,200)]">
                 {book.title}
               </p>
 

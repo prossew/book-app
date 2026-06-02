@@ -5,7 +5,7 @@ type Props = {
 
 export function BookCard({ title, cover }: Props) {
   return (
-    <div className="w-[135px] flex flex-col items-center shrink-0">
+    <div className="w-[135px] flex flex-col items-center shrink-0 ">
       <img
         src={cover}
         alt={title}

@@ -1,5 +1,6 @@
 import { Book, Layers, Search, DoorOpen } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
+import { ThemeToggle } from "@/assets/shared/ui/ThemeToggle";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -22,11 +23,11 @@ export function Header() {
   }, []);
 
   return (
-    <header className="h-14 w-full flex bg-header-bg items-center">
+    <header className="h-14 w-full flex bg-header-bg items-center text-[rgb(222,222,222)] ">
       <div className="flex items-center justify-between max-w-7xl mx-auto h-full  w-full">
         <div className="flex gap-2 ">
           <Book color="#000" strokeWidth={1.25} />
-          <span>Murakami</span>
+          <span className=" text-lg">Murakami</span>
         </div>
 
         <div className="hidden md:flex gap-6">
@@ -59,6 +60,7 @@ export function Header() {
         </div>
 
         <div className="flex items-center gap-4 hover:bg-black/5 cursor-pointer">
+          <ThemeToggle />
           <DoorOpen color="#000" strokeWidth={1.25} />
           <button>Вход | Регистрация</button>
         </div>

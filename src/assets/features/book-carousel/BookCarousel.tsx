@@ -21,7 +21,7 @@ export function BookCarousel() {
   };
 
   return (
-    <div className="relative w-[1170px] h-[273px] mx-auto group bg-[#f5f5f5] rounded-lg px-6 shadow-sm">
+    <div className="relative w-[1170px] h-[273px] mx-auto group bg-[#f5f5f5] rounded-lg px-6 shadow-sm dark:bg-zinc-900 dark:text-[rgb(198,198,200)]">
       <button
         onClick={scrollLeft}
         className="
