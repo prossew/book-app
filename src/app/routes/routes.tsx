@@ -1,5 +1,17 @@
 import LazyHomePage from "./LazyHomePage";
+import LazyBookPage from "./LazyBookPage";
+import { MainLayout } from "../layouts/MainLayout";
 
-export const routes = [{ path: "/", element: <LazyHomePage /> }];
+export const routes = [
+  {
+    element: <MainLayout />,
+    children: [
+      { path: "/", element: <LazyHomePage /> },
 
-export default routes;
+      {
+        path: "/book/:id",
+        element: <LazyBookPage />,
+      },
+    ],
+  },
+];

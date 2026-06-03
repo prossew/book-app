@@ -1,8 +1,11 @@
-type Book = {
+export type Book = {
   id: string;
   title: string;
   cover: string;
-  category: "Книга" | "Манга";
+  category: "book" | "manga";
+  author: string;
+  year: number;
+  description: string;
 };
 
 export const books: Book[] = [
@@ -10,54 +13,81 @@ export const books: Book[] = [
     id: "1",
     title: "Норвежский лес",
     cover: "/books/1.webp",
-    category: "Книга",
+    category: "book",
+    author: "Харуки Мураками",
+    year: 1987,
+    description: "Роман о любви и одиночестве в Токио."
   },
   {
     id: "2",
     title: "Кафка на пляже",
     cover: "/books/2.webp",
-    category: "Книга",
+    category: "book",
+    author: "Харуки Мураками",
+    year: 2005,
+    description: "Роман о жизни и любви в современном Токио."
   },
   {
     id: "3",
     title: "1Q84",
     cover: "/books/3.jpg",
-    category: "Книга",
+    category: "book",
+    author: "Харуки Мураками",
+    year: 2009,
+    description: "Эпический роман о двух мирах, пересекающихся в тайне."
   },
   {
     id: "4",
     title: "Послемрак",
     cover: "/books/4.webp",
-    category: "Книга",
+    category: "book",
+    author: "Харуки Мураками",
+    year: 2011,
+    description: "Роман о жизни и любви в современном Токио."
   },
   {
     id: "5",
     title: "Мужчины без женщин",
     cover: "/books/5.webp",
-    category: "Книга",
+    category: "book",
+    author: "Харуки Мураками",
+    year: 2014,
+    description: "Роман о любви и одиночестве в Токио."
   },
   {
     id: "6",
     title: "Охота на овец",
     cover: "/books/6.webp",
-    category: "Книга",
+    category: "book",
+    author: "Харуки Мураками",
+    year: 2017,
+    description: "Роман о жизни и любви в современном Токио."
   },
   {
     id: "7",
     title: "К югу от границы, на запад от солнца. Х.",
     cover: "/books/7.webp",
-    category: "Книга",
+    category: "book",
+    author: "Харуки Мураками",
+    year: 2018,
+    description: "Роман о жизни и любви в современном Токио."
   },
   {
     id: "8",
     title: "О чем я говорю, когда говорю о беге",
     cover: "/books/8.webp",
-    category: "Книга",
+    category: "book",
+    author: "Харуки Мураками",
+    year: 2019,
+    description: "Роман о жизни и любви в современном Токио."
   },
   {
     id: "9",
     title: "Анна Каренина",
     cover: "/books/9.jpg",
-    category: "Книга",
+    category: "book",
+    author: "Лев Толстой",
+    year: 1877,
+    description: "Роман о любви и предательстве в имперской России."
   },
 ];

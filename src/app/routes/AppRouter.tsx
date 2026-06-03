@@ -8,7 +8,15 @@ export const AppRouter = () => {
       <Suspense fallback={<div>Загрузка...</div>}>
         <Routes>
           {routes.map((r) => (
-            <Route key={r.path} path={r.path} element={r.element} />
+            <Route key="layout" element={r.element}>
+              {r.children?.map((child) => (
+                <Route 
+                  key={child.path} 
+                  path={child.path} 
+                  element={child.element} 
+                />
+              ))}
+            </Route>
           ))}
         </Routes>
       </Suspense>

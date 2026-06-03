@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Dropdown } from "@/shared/ui/Dropdown";
 import { ArrowRight } from "lucide-react";
 import { books } from "@/entities/book/books";
@@ -31,9 +32,10 @@ export function PopularBooks() {
 
       <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {books.map((book) => (
-          <div
+          <Link
             key={book.id}
-            className="flex items-center gap-3 p-2 rounded-lg hover:bg-black/5 transition cursor-pointer  "
+            to={`/book/${book.id}`}
+            className="flex items-center gap-3 p-2 rounded-lg hover:bg-black/5 transition cursor-pointer no-underline"
           >
             <img
               src={book.cover}
@@ -47,7 +49,7 @@ export function PopularBooks() {
 
               <p className="text-xs text-gray-400">Книга</p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>
