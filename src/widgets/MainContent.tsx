@@ -7,7 +7,6 @@ export function MainContent() {
       <div className="flex-1">
         <LatestUpdates />
       </div>
-
       <RightSidebar />
     </section>
   );

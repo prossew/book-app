@@ -39,7 +39,7 @@ export function Header() {
             <button onClick={() => setOpen((prev) => !prev)}>Каталог</button>
 
             {open && (
-              <ul className="absolute top-full bg-white shadow-md rounded-md z-10 mt-2 py-3 px-3 min-w-48 flex flex-col space-y-3">
+              <ul className="absolute top-full bg-white shadow-md rounded-md z-10 mt-2 py-3 px-3 min-w-48 flex flex-col space-y-3 text-[black] dark:bg-zinc-900 dark:text-[rgb(198,198,200)]">
                 <li>
                   <a href="#" className="block px-4 py-2 hover:bg-gray-100">
                     Все книги
