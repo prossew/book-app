@@ -1,7 +1,7 @@
 import LazyHomePage from "./LazyHomePage";
 import LazyBookPage from "./LazyBookPage";
-import { MainLayout } from "../layouts/MainLayout";
 import LazyReaderPage from "./LazyReaderPage";
+import { MainLayout } from "../layouts/MainLayout";
 
 export const routes = [
   {
