@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { books } from "@/entities/book/books";
 import { BookOpen } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export function BookPage() {
   const { id } = useParams();
@@ -21,10 +22,21 @@ export function BookPage() {
           className="w-[260px] h-[364px] rounded-2xl object-cover shadow-md"
         />
 
-        <button className="mt-6 w-[260px] bg-[#ef6c00] text-white py-2 rounded-md hover:opacity-90 transition">
-          <BookOpen className="inline-block mr-2" size={18} />
-          Начать читать
-        </button>
+        {book.epubPath ? (
+          <Link to={`/book/${book.id}/read`}>
+            <button className="mt-6 w-[260px] bg-[#ef6c00] text-white py-2 rounded-md hover:opacity-90 transition">
+              <BookOpen className="inline-block mr-2" size={18} />
+              Начать читать
+            </button>
+          </Link>
+        ) : (
+          <button
+            className="mt-6 w-[260px] bg-gray-300 text-gray-700 py-2 rounded-md cursor-not-allowed"
+            disabled
+          >
+            EPUB не добавлен
+          </button>
+        )}
       </div>
 
       <div className="flex-1">
@@ -65,7 +77,7 @@ export function BookPage() {
 
           {tab === "reviews" && (
             <div className="space-y-4">
-              // отзывы пока отсутствуют, так что просто заглушка //
+              {/* отзывы пока отсутствуют, так что просто заглушка */}
             </div>
           )}
         </div>

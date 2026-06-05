@@ -2,6 +2,7 @@ export type Book = {
   id: string;
   title: string;
   cover: string;
+  epubPath?: string;
   category: "book" | "manga";
   author: string;
   year: number;
@@ -13,10 +14,11 @@ export const books: Book[] = [
     id: "1",
     title: "Норвежский лес",
     cover: "/books/1.webp",
+    epubPath: "/epubs/Norwegian_Wood.epub",
     category: "book",
     author: "Харуки Мураками",
     year: 1987,
-    description: "Роман о любви и одиночестве в Токио."
+    description: "Роман о любви и одиночестве в Токио.",
   },
   {
     id: "2",
@@ -25,7 +27,7 @@ export const books: Book[] = [
     category: "book",
     author: "Харуки Мураками",
     year: 2005,
-    description: "Роман о жизни и любви в современном Токио."
+    description: "Роман о жизни и любви в современном Токио.",
   },
   {
     id: "3",
@@ -34,7 +36,7 @@ export const books: Book[] = [
     category: "book",
     author: "Харуки Мураками",
     year: 2009,
-    description: "Эпический роман о двух мирах, пересекающихся в тайне."
+    description: "Эпический роман о двух мирах, пересекающихся в тайне.",
   },
   {
     id: "4",
@@ -43,7 +45,7 @@ export const books: Book[] = [
     category: "book",
     author: "Харуки Мураками",
     year: 2011,
-    description: "Роман о жизни и любви в современном Токио."
+    description: "Роман о жизни и любви в современном Токио.",
   },
   {
     id: "5",
@@ -52,7 +54,7 @@ export const books: Book[] = [
     category: "book",
     author: "Харуки Мураками",
     year: 2014,
-    description: "Роман о любви и одиночестве в Токио."
+    description: "Роман о любви и одиночестве в Токио.",
   },
   {
     id: "6",
@@ -61,7 +63,7 @@ export const books: Book[] = [
     category: "book",
     author: "Харуки Мураками",
     year: 2017,
-    description: "Роман о жизни и любви в современном Токио."
+    description: "Роман о жизни и любви в современном Токио.",
   },
   {
     id: "7",
@@ -70,7 +72,7 @@ export const books: Book[] = [
     category: "book",
     author: "Харуки Мураками",
     year: 2018,
-    description: "Роман о жизни и любви в современном Токио."
+    description: "Роман о жизни и любви в современном Токио.",
   },
   {
     id: "8",
@@ -79,7 +81,7 @@ export const books: Book[] = [
     category: "book",
     author: "Харуки Мураками",
     year: 2019,
-    description: "Роман о жизни и любви в современном Токио."
+    description: "Роман о жизни и любви в современном Токио.",
   },
   {
     id: "9",
@@ -88,6 +90,6 @@ export const books: Book[] = [
     category: "book",
     author: "Лев Толстой",
     year: 1877,
-    description: "Роман о любви и предательстве в имперской России."
+    description: "Роман о любви и предательстве в имперской России.",
   },
 ];
