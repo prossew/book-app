@@ -1,55 +1,23 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { books } from "@/entities/book/books";
 import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
-import type { Rendition } from "epubjs";
 
-type EpubFactory = (typeof import("epubjs"))["default"];
+import { useEpubReader } from "@/features/reader/hooks/useEpubReader";
+import { useReaderKeyboard } from "@/features/reader/hooks/useReaderKeyboard";
 
 export function ReaderPage() {
   const { id } = useParams();
+
   const book = books.find((b) => b.id === id);
 
   const navigate = useNavigate();
+
   const viewerRef = useRef<HTMLDivElement | null>(null);
-  const renditionRef = useRef<Rendition | null>(null);
 
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "ArrowLeft") renditionRef.current?.prev();
-      if (event.key === "ArrowRight") renditionRef.current?.next();
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, []);
+  const renditionRef = useEpubReader(book?.epubPath, viewerRef);
 
-  useEffect(() => {
-    const epubPath = book?.epubPath;
-    if (!book || !epubPath || !viewerRef.current) return;
-
-    let mounted = true;
-
-    import("epubjs").then((module) => {
-      if (!mounted || !viewerRef.current) return;
-
-      const ePub = (module.default || module) as EpubFactory;
-      const bookInstance = ePub(epubPath);
-
-      const rendition = bookInstance.renderTo(viewerRef.current, {
-        width: "100%",
-        height: "100%",
-        allowScriptedContent: true,
-      }) as Rendition;
-
-      renditionRef.current = rendition;
-      rendition.display();
-    });
-
-    return () => {
-      mounted = false;
-      renditionRef.current?.destroy?.();
-    };
-  }, [book]);
+  useReaderKeyboard(renditionRef);
 
   if (!book) {
     return <div className="text-center mt-10">Книга не найдена</div>;
@@ -59,6 +27,7 @@ export function ReaderPage() {
     return (
       <div className="max-w-xl mx-auto mt-16 p-6 bg-white rounded-xl shadow-sm text-center">
         <p className="mb-4 text-lg">Для этой книги EPUB-файл не настроен.</p>
+
         <button
           className="px-4 py-2 bg-[#ef6c00] text-white rounded-md"
           onClick={() => navigate(`/book/${book.id}`)}
@@ -100,6 +69,7 @@ export function ReaderPage() {
       <div className="max-w-[1200px] mx-auto px-4 py-6">
         <div className="mb-4">
           <h1 className="text-2xl font-bold dark:text-white">{book.title}</h1>
+
           <p className="text-sm text-slate-500 dark:text-slate-400">
             {book.author}
           </p>
